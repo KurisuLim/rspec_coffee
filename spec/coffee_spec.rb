@@ -10,6 +10,15 @@ class Coffee
     def price
       1.00 + ingredients.size * 0.25
     end
+
+    def color
+      ingredients.include?(:milk) ? :light : :dark
+    end
+
+    def temperature
+      ingredients.include?(:milk) ? 190.0 : 205.0
+    end
+
   end
 
   RSpec.configure do |config|
@@ -32,12 +41,14 @@ class Coffee
       end
 
       it 'is light in color' do
-        pending 'Color not implemented yet'
+        # pending 'Color not implemented yet'
         expect(coffee.color).to be(:light)
       end
+
       it 'is cooler than 200 degrees Fahrenheit' do
-        pending 'Temperature not implemented yet'
+        # pending 'Temperature not implemented yet'
         expect(coffee.temperature).to be < 200.0
       end
+
   end
 end
